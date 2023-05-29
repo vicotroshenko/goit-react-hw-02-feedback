@@ -1,15 +1,12 @@
+import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { List, Span } from './Statistics.styled';
 
 
-export const Statistics = ({
-	good, 
-	neutral, 
-	bad, 
-	total, 
-	positivePercentage,
-}) => {
-		return (
+export class Statistics extends Component {
+  render() {
+    const {good, neutral, bad, total, positivePercentage,} = this.props;
+    return (
 			<List>
           <li>Good
             <Span>{good}</Span>
@@ -28,6 +25,7 @@ export const Statistics = ({
           </li>
         </List>
 		)
+  }
 }
 
 Statistics.propTypes = {
